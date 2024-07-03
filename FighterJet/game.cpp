@@ -3,10 +3,17 @@
 Game::Game()
 	: mWindow(sf::VideoMode(640, 480), "SFML Application")
 	, mPlayer()
+	, mTexture()
+	
+
 {
-	mPlayer.setRadius(40.f);
+	if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
+	{
+		// Handle loading error
+	}
+	mPlayer.setTexture(mTexture);
 	mPlayer.setPosition(100.f, 100.f);
-	mPlayer.setFillColor(sf::Color::Cyan);
+
 }
 
 void Game::run()
