@@ -4,7 +4,7 @@ Game::Game()
 	: mWindow(sf::VideoMode(640, 480), "SFML Application")
 	, mPlayer()
 	, mTexture()
-	
+
 
 {
 	if (!mTexture.loadFromFile("Media/Textures/Eagle.png"))
@@ -87,5 +87,6 @@ void Game::render()
 	mWindow.draw(mPlayer);
 	mWindow.display();
 }
+
 
 

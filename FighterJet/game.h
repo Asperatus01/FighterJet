@@ -19,7 +19,7 @@ private:
 	sf::RenderWindow mWindow;
 	sf::Texture mTexture;
 	sf::Sprite mPlayer;
-
+	
 
 	bool mIsMovingUp;
 	bool mIsMovingDown;
