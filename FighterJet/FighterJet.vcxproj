@@ -135,19 +135,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="game.h" />
-    <ClInclude Include="resource_holder.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="Media\Textures\Desert.png" />
     <Image Include="Media\Textures\Eagle.png" />
+    <Image Include="Media\Textures\Raptor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resource_holder.inl" />
+    <ClInclude Include="Include\aircraft.h" />
+    <ClInclude Include="Include\entity.h" />
+    <ClInclude Include="Include\foreach.h" />
+    <ClInclude Include="Include\game.h" />
+    <ClInclude Include="Include\resource_holder.h" />
+    <ClInclude Include="Include\resource_identifiers.h" />
+    <ClInclude Include="Include\scene_node.h" />
+    <ClInclude Include="Include\sprite_node.h" />
+    <ClInclude Include="Include\string_helpers.h" />
+    <ClInclude Include="Include\world.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\resource_holder.inl" />
+    <None Include="Include\string_helpers.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\aircraft.cpp" />
+    <ClCompile Include="Source\entity.cpp" />
+    <ClCompile Include="Source\game.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\scene_node.cpp" />
+    <ClCompile Include="Source\sprite_node.cpp" />
+    <ClCompile Include="Source\world.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
