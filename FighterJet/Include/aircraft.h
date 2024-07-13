@@ -1,5 +1,6 @@
 #ifndef AIRCRAFT_H
 #define AIRCRAFT_H
+
 #include "entity.h"
 #include "resource_identifiers.h"
 #include <SFML/Graphics/Sprite.hpp>
@@ -14,6 +15,7 @@ public:
 	};
 	Aircraft(Type type, const TextureHolder& textures);
 	virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+	virtual unsigned int getCategory() const;
 private:
 	Type mType;
 	sf::Sprite mSprite;

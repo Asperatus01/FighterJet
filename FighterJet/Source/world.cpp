@@ -1,5 +1,9 @@
 #include "../Include/world.h"
-#include <iostream>
+
+#include <SFML/Graphics/RenderWindow.hpp>
+
+#include <algorithm>
+#include <cmath>
 
 
 World::World(sf::RenderWindow& window)
@@ -22,29 +26,30 @@ World::World(sf::RenderWindow& window)
 
 void World::update(sf::Time dt)
 {
-	// Scroll the world
+	// Scroll the world, reset player velocity
 	mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());
+	mPlayerAircraft->setVelocity(0.f, 0.f);
 
-	// Move the player sidewards (plane scouts follow the main aircraft)
-	sf::Vector2f position = mPlayerAircraft->getPosition();
-	sf::Vector2f velocity = mPlayerAircraft->getVelocity();
+	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
+	while (!mCommandQueue.isEmpty())
+		mSceneGraph.onCommand(mCommandQueue.pop(), dt);
+	
+	adaptPlayerVelocity();
 
-	// If player touches borders, flip its X velocity
-	if (position.x <= mWorldBounds.left + 150.f
-		|| position.x >= mWorldBounds.left + mWorldBounds.width - 150.f)
-	{
-		velocity.x = -velocity.x;
-		mPlayerAircraft->setVelocity(velocity);
-	}
-
-	// Apply movements
+	// Regular update step, adapt position (correct if outside view)
 	mSceneGraph.update(dt);
+	adaptPlayerPosition();
 }
 
 void World::draw()
 {
 	mWindow.setView(mWorldView);
 	mWindow.draw(mSceneGraph);
+}
+
+CommandQueue& World::getCommandQueue()
+{
+	return mCommandQueue;
 }
 
 void World::loadTextures()
@@ -97,3 +102,31 @@ void World::buildScene()
 	mPlayerAircraft->attachChild(std::move(rightEscort2));
 	
 }
+
+void World::adaptPlayerPosition()
+{
+	// —ледите за тем, чтобы игрок находилс€ в пределах экрана, по крайней мере, на рассто€нии нескольких единиц от границы
+	sf::FloatRect viewBounds(mWorldView.getCenter() - mWorldView.getSize() / 2.f, mWorldView.getSize());
+	const float borderDistance = 40.f;
+
+	sf::Vector2f position = mPlayerAircraft->getPosition();
+	position.x = std::max(position.x, viewBounds.left + borderDistance);
+	position.x = std::min(position.x, viewBounds.left + viewBounds.width - borderDistance);
+	position.y = std::max(position.y, viewBounds.top + borderDistance);
+	position.y = std::min(position.y, viewBounds.top + viewBounds.height - borderDistance);
+	mPlayerAircraft->setPosition(position);
+}
+
+void World::adaptPlayerVelocity()
+{
+	sf::Vector2f velocity = mPlayerAircraft->getVelocity();
+
+	// ѕри движении по диагонали уменьшите скорость (чтобы скорость всегда была одинаковой).
+	if (velocity.x != 0.f && velocity.y != 0.f)
+		mPlayerAircraft->setVelocity(velocity / std::sqrt(2.f));
+
+	// ”величьте скорость прокрутки
+	mPlayerAircraft->accelerate(0.f, mScrollSpeed);
+}
+
+

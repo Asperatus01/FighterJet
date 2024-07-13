@@ -6,10 +6,13 @@
 #include "scene_node.h"
 #include "sprite_node.h"
 #include "aircraft.h"
+#include "command_queue.h"
+#include "command.h"
 
 #include <SFML/Graphics.hpp>
 
 #include <array>
+#include <queue>
 
 
 // Forward declaration
@@ -25,10 +28,14 @@ public:
 	void update(sf::Time dt);
 	void draw();
 
+	CommandQueue& getCommandQueue();
+
 
 private:
 	void loadTextures();
 	void buildScene();
+	void adaptPlayerPosition();
+	void adaptPlayerVelocity();
 
 
 private:
@@ -41,17 +48,18 @@ private:
 
 
 private:
-	sf::RenderWindow& mWindow;
-	sf::View mWorldView;
-	TextureHolder mTextures;
+	sf::RenderWindow&                  mWindow;
+	sf::View                           mWorldView;
+	TextureHolder                      mTextures;
 
-	SceneNode mSceneGraph;
+	SceneNode                           mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
+	CommandQueue                        mCommandQueue;
 
-	sf::FloatRect mWorldBounds;
-	sf::Vector2f mSpawnPosition;
-	float mScrollSpeed;
-	Aircraft* mPlayerAircraft;
+	sf::FloatRect                       mWorldBounds;
+	sf::Vector2f                        mSpawnPosition;
+	float                               mScrollSpeed;
+	Aircraft*                           mPlayerAircraft;
 };
 
 #endif 

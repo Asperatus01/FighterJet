@@ -141,9 +141,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\aircraft.h" />
+    <ClInclude Include="Include\category.h" />
+    <ClInclude Include="Include\command.h" />
+    <ClInclude Include="Include\command_queue.h" />
     <ClInclude Include="Include\entity.h" />
     <ClInclude Include="Include\foreach.h" />
     <ClInclude Include="Include\game.h" />
+    <ClInclude Include="Include\player.h" />
     <ClInclude Include="Include\resource_holder.h" />
     <ClInclude Include="Include\resource_identifiers.h" />
     <ClInclude Include="Include\scene_node.h" />
@@ -157,9 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\aircraft.cpp" />
+    <ClCompile Include="Source\command.cpp" />
+    <ClCompile Include="Source\command_queue.cpp" />
     <ClCompile Include="Source\entity.cpp" />
     <ClCompile Include="Source\game.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\player.cpp" />
     <ClCompile Include="Source\scene_node.cpp" />
     <ClCompile Include="Source\sprite_node.cpp" />
     <ClCompile Include="Source\world.cpp" />
