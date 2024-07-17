@@ -1,6 +1,6 @@
 #include "../Include/world.h"
 
-#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics.hpp>
 
 #include <algorithm>
 #include <cmath>

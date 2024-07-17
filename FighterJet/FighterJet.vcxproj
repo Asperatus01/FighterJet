@@ -141,34 +141,54 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\aircraft.h" />
+    <ClInclude Include="Include\application.h" />
     <ClInclude Include="Include\category.h" />
     <ClInclude Include="Include\command.h" />
     <ClInclude Include="Include\command_queue.h" />
     <ClInclude Include="Include\entity.h" />
     <ClInclude Include="Include\foreach.h" />
-    <ClInclude Include="Include\game.h" />
+    <ClInclude Include="Include\game_state.h" />
+    <ClInclude Include="Include\loading_state.h" />
+    <ClInclude Include="Include\menu_state.h" />
+    <ClInclude Include="Include\parallel_task.h" />
+    <ClInclude Include="Include\pause_state.h" />
     <ClInclude Include="Include\player.h" />
     <ClInclude Include="Include\resource_holder.h" />
     <ClInclude Include="Include\resource_identifiers.h" />
     <ClInclude Include="Include\scene_node.h" />
     <ClInclude Include="Include\sprite_node.h" />
+    <ClInclude Include="Include\state.h" />
+    <ClInclude Include="Include\state_identifiers.h" />
+    <ClInclude Include="Include\state_stack.h" />
     <ClInclude Include="Include\string_helpers.h" />
+    <ClInclude Include="Include\title_state.h" />
+    <ClInclude Include="Include\utility.h" />
     <ClInclude Include="Include\world.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Include\resource_holder.inl" />
     <None Include="Include\string_helpers.inl" />
+    <None Include="Include\utility.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\aircraft.cpp" />
+    <ClCompile Include="Source\application.cpp" />
     <ClCompile Include="Source\command.cpp" />
     <ClCompile Include="Source\command_queue.cpp" />
     <ClCompile Include="Source\entity.cpp" />
-    <ClCompile Include="Source\game.cpp" />
+    <ClCompile Include="Source\game_state.cpp" />
+    <ClCompile Include="Source\loading_state.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\menu_state.cpp" />
+    <ClCompile Include="Source\parallel_task.cpp" />
+    <ClCompile Include="Source\pause_state.cpp" />
     <ClCompile Include="Source\player.cpp" />
     <ClCompile Include="Source\scene_node.cpp" />
     <ClCompile Include="Source\sprite_node.cpp" />
+    <ClCompile Include="Source\state.cpp" />
+    <ClCompile Include="Source\state_stack.cpp" />
+    <ClCompile Include="Source\title_state.cpp" />
+    <ClCompile Include="Source\utility.cpp" />
     <ClCompile Include="Source\world.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

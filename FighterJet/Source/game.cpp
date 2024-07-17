@@ -1,7 +1,7 @@
 #include "../Include/game.h"
 #include "../Include/string_helpers.h"
 
-#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics.hpp>
 
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
