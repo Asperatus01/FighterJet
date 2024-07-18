@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;C:\Users\admin\source\repos\FighterJet\FighterJet\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,7 +90,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;C:\Users\admin\source\repos\FighterJet\FighterJet\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,7 +106,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;C:\Users\admin\source\repos\FighterJet\FighterJet\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,7 +124,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\admin\source\repos\SFML-2.6.1\include;C:\Users\admin\source\repos\FighterJet\FighterJet\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,12 +142,16 @@
   <ItemGroup>
     <ClInclude Include="Include\aircraft.h" />
     <ClInclude Include="Include\application.h" />
+    <ClInclude Include="Include\button.h" />
     <ClInclude Include="Include\category.h" />
     <ClInclude Include="Include\command.h" />
     <ClInclude Include="Include\command_queue.h" />
+    <ClInclude Include="Include\component.h" />
+    <ClInclude Include="Include\container.h" />
     <ClInclude Include="Include\entity.h" />
-    <ClInclude Include="Include\foreach.h" />
+    <ClInclude Include="Include\game.h" />
     <ClInclude Include="Include\game_state.h" />
+    <ClInclude Include="Include\label.h" />
     <ClInclude Include="Include\loading_state.h" />
     <ClInclude Include="Include\menu_state.h" />
     <ClInclude Include="Include\parallel_task.h" />
@@ -156,6 +160,7 @@
     <ClInclude Include="Include\resource_holder.h" />
     <ClInclude Include="Include\resource_identifiers.h" />
     <ClInclude Include="Include\scene_node.h" />
+    <ClInclude Include="Include\settings_state.h" />
     <ClInclude Include="Include\sprite_node.h" />
     <ClInclude Include="Include\state.h" />
     <ClInclude Include="Include\state_identifiers.h" />
@@ -173,10 +178,15 @@
   <ItemGroup>
     <ClCompile Include="Source\aircraft.cpp" />
     <ClCompile Include="Source\application.cpp" />
+    <ClCompile Include="Source\button.cpp" />
     <ClCompile Include="Source\command.cpp" />
     <ClCompile Include="Source\command_queue.cpp" />
+    <ClCompile Include="Source\component.cpp" />
+    <ClCompile Include="Source\container.cpp" />
     <ClCompile Include="Source\entity.cpp" />
+    <ClCompile Include="Source\game.cpp" />
     <ClCompile Include="Source\game_state.cpp" />
+    <ClCompile Include="Source\label.cpp" />
     <ClCompile Include="Source\loading_state.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\menu_state.cpp" />
@@ -184,6 +194,7 @@
     <ClCompile Include="Source\pause_state.cpp" />
     <ClCompile Include="Source\player.cpp" />
     <ClCompile Include="Source\scene_node.cpp" />
+    <ClCompile Include="Source\settings_state.cpp" />
     <ClCompile Include="Source\sprite_node.cpp" />
     <ClCompile Include="Source\state.cpp" />
     <ClCompile Include="Source\state_stack.cpp" />

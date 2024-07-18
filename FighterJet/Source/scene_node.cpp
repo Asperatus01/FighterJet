@@ -1,6 +1,5 @@
-#include "../Include/scene_node.h"
-#include "../Include/foreach.h"
-#include "../Include/command.h"
+#include <scene_node.h>
+#include <command.h>
 
 #include <algorithm>
 #include <cassert>

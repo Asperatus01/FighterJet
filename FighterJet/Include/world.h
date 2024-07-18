@@ -1,13 +1,13 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "resource_holder.h"
-#include "resource_identifiers.h"
-#include "scene_node.h"
-#include "sprite_node.h"
-#include "aircraft.h"
-#include "command_queue.h"
-#include "command.h"
+#include <resource_holder.h>
+#include <resource_identifiers.h>
+#include <scene_node.h>
+#include <sprite_node.h>
+#include <aircraft.h>
+#include <command_queue.h>
+#include <command.h>
 
 #include <SFML/Graphics.hpp>
 
@@ -24,18 +24,18 @@ namespace sf
 class World : private sf::NonCopyable
 {
 public:
-	explicit World(sf::RenderWindow& window);
-	void update(sf::Time dt);
-	void draw();
+	explicit                  World(sf::RenderWindow& window);
+	void                      update(sf::Time dt);
+	void                      draw();
 
-	CommandQueue& getCommandQueue();
+	CommandQueue&             getCommandQueue();
 
 
 private:
-	void loadTextures();
-	void buildScene();
-	void adaptPlayerPosition();
-	void adaptPlayerVelocity();
+	void                      loadTextures();
+	void                      buildScene();
+	void                      adaptPlayerPosition();
+	void                      adaptPlayerVelocity();
 
 
 private:
@@ -48,9 +48,9 @@ private:
 
 
 private:
-	sf::RenderWindow&                  mWindow;
-	sf::View                           mWorldView;
-	TextureHolder                      mTextures;
+	sf::RenderWindow&                   mWindow;
+	sf::View                            mWorldView;
+	TextureHolder                       mTextures;
 
 	SceneNode                           mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
@@ -62,5 +62,5 @@ private:
 	Aircraft*                           mPlayerAircraft;
 };
 
-#endif 
+#endif // WORLD_H
 

@@ -1,7 +1,7 @@
 #ifndef SPRITE_NODE_H
 #define SPRITE_NODE_H
 
-#include "scene_node.h"
+#include <scene_node.h>
 
 
 class SpriteNode : public SceneNode
@@ -16,5 +16,5 @@ private:
 private:
 	sf::Sprite mSprite;
 };
-#endif 
+#endif // SPRITE_NODE_H
 

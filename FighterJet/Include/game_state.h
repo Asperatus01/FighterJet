@@ -1,9 +1,9 @@
 #ifndef GAME_STATE_H
 #define GAME_STATE_H
 
-#include "state.h"
-#include "world.h"
-#include "player.h"
+#include <state.h>
+#include <world.h>
+#include <player.h>
 
 
 #include <SFML/Graphics.hpp>
@@ -13,7 +13,7 @@
 class GameState : public State
 {
 public:
-	GameState(StateStack& stack, Context context);
+	                    GameState(StateStack& stack, Context context);
 
 	virtual void		draw();
 	virtual bool		update(sf::Time dt);

@@ -1,7 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "scene_node.h"
+#include <scene_node.h>
 
 
 class Entity : public SceneNode
@@ -19,4 +19,4 @@ private:
 protected:
 	sf::Vector2f mVelocity;
 };
-#endif
+#endif // ENTITY_H 

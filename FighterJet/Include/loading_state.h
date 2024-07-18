@@ -2,8 +2,8 @@
 #define LOADING_STATE_H
 
 
-#include "state.h"
-#include "parallel_task.h"
+#include <state.h>
+#include <parallel_task.h>
 
 #include <SFML/Graphics.hpp>
 

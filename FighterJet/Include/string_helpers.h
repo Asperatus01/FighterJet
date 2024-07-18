@@ -10,5 +10,5 @@ template <typename T>
 std::string toString(const T& value);
 
 #include "string_helpers.inl"
-#endif 
+#endif // STRING_HELPERS_H
 

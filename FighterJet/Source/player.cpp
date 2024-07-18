@@ -1,6 +1,6 @@
-#include "../Include/player.h"
-#include "../Include/command_queue.h"
-#include "../Include/aircraft.h"
+#include <player.h>
+#include <command_queue.h>
+#include <aircraft.h>
 
 #include <map>
 #include <string>

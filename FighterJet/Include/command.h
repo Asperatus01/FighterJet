@@ -1,22 +1,21 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include <functional>
-#include <cassert>
+#include <category.h>
 
-
-#include "category.h"
 #include <SFML/Graphics.hpp>
 
+#include <functional>
+#include <cassert>
 
 class SceneNode;
 
 struct Command
 {
-	Command();
+	                                         Command();
 
 	std::function<void(SceneNode&, sf::Time)> action;
-	unsigned int category;
+	unsigned int                              category;
 };
 
 template <typename GameObject, typename Function>
@@ -31,4 +30,4 @@ std::function<void(SceneNode&, sf::Time)> derivedAction(Function fn)
 		fn(static_cast<GameObject&>(node), dt);
 	};
 }
-#endif
+#endif // COMMAND_H

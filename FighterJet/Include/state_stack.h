@@ -1,12 +1,11 @@
 #ifndef STATE_STACK_H
 #define STATE_STACK_H
 
-#include "state.h"
-#include "state_identifiers.h"
-#include "resource_identifiers.h"
+#include <state.h>
+#include <state_identifiers.h>
+#include <resource_identifiers.h>
 
-#include <SFML/System/NonCopyable.hpp>
-#include <SFML/System/Time.hpp>
+#include <SFML/Graphics.hpp>
 
 #include <vector>
 #include <utility>

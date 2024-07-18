@@ -1,5 +1,5 @@
-#include "../Include/aircraft.h"
-#include "../Include/resource_holder.h"
+#include <aircraft.h>
+#include <resource_holder.h>
 
 #include <SFML/Graphics.hpp>
 

@@ -10,7 +10,7 @@
 class ParallelTask
 {
 public:
-	ParallelTask();
+	                    ParallelTask();
 	void				execute();
 	bool				isFinished();
 	float				getCompletion();

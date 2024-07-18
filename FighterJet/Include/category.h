@@ -15,4 +15,4 @@ namespace Category
 	};
 }
 
-#endif
+#endif // CATEGORY_H

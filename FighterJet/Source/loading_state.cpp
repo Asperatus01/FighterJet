@@ -1,6 +1,6 @@
-#include "../Include/loading_state.h"
-#include "../Include/utility.h"
-#include "../Include/resource_holder.h"
+#include <loading_state.h>
+#include <utility.h>
+#include <resource_holder.h>
 
 #include <SFML/Graphics.hpp>
 

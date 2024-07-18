@@ -1,5 +1,5 @@
-#include "../Include/game.h"
-#include "../Include/string_helpers.h"
+#include <game.h>
+#include <string_helpers.h>
 
 #include <SFML/Graphics.hpp>
 
@@ -14,8 +14,6 @@ Game::Game()
 	, mStatisticsNumFrames(0)
 	, mWorld(mWindow)
 {
-	mWindow.setKeyRepeatEnabled(false);
-
 	mFont.loadFromFile("Media/Sansation.ttf");
 	mStatisticsText.setFont(mFont);
 	mStatisticsText.setPosition(5.f, 5.f);
@@ -34,7 +32,7 @@ void Game::run()
 		{
 			timeSinceLastUpdate -= TimePerFrame;
 
-			processInput();
+			processEvents();
 			update(TimePerFrame);
 
 		}
@@ -44,20 +42,26 @@ void Game::run()
 	}
 }
 
-void Game::processInput()
+void Game::processEvents()
 {
-	CommandQueue& commands = mWorld.getCommandQueue();
-
 	sf::Event event;
 	while (mWindow.pollEvent(event))
 	{
-		mPlayer.handleEvent(event, commands);
+		switch (event.type)
+		{
+		case sf::Event::KeyPressed:
+			handlePlayerInput(event.key.code, true);
+			break;
 
-		if (event.type == sf::Event::Closed)
+		case sf::Event::KeyReleased:
+			handlePlayerInput(event.key.code, false);
+			break;
+
+		case sf::Event::Closed:
 			mWindow.close();
+			break;
+		}
 	}
-
-	mPlayer.handleRealtimeInput(commands);
 }
 
 void Game::update(sf::Time elapsedTime)
@@ -91,4 +95,7 @@ void Game::updateStatistics(sf::Time elapsedTime)
 	}
 }
 
+void Game::handlePlayerInput(sf::Keyboard::Key, bool)
+{
+}
 

@@ -5,7 +5,7 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
-#include "category.h"
+#include <category.h>
 
 struct Command;
 
@@ -37,6 +37,6 @@ private:
 	std::vector<Ptr> mChildren;
 	SceneNode* mParent;
 };
-#endif
+#endif // SCENE_NODE_H
 
 

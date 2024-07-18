@@ -1,4 +1,4 @@
-#include "../Include/world.h"
+#include <world.h>
 
 #include <SFML/Graphics.hpp>
 
@@ -87,7 +87,7 @@ void World::buildScene()
 	mPlayerAircraft->setVelocity(40.f, mScrollSpeed);
 	mSceneLayers[Air]->attachChild(std::move(leader)); 
 
-	
+	/*
 	// Add two escorting aircrafts, placed relatively to the main plane
 	std::unique_ptr<Aircraft> leftEscort(new Aircraft(Aircraft::Raptor, mTextures));
 	leftEscort->setPosition(-80.f, 50.f);
@@ -100,6 +100,9 @@ void World::buildScene()
 	std::unique_ptr<Aircraft> rightEscort2(new Aircraft(Aircraft::Raptor, mTextures));
 	rightEscort2->setPosition(160.f, 100.f);
 	mPlayerAircraft->attachChild(std::move(rightEscort2));
+	*/
+	
+	
 	
 }
 

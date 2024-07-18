@@ -1,4 +1,4 @@
-#include "../Include/command.h"
+#include <command.h>
 
 Command::Command()
 	: action()

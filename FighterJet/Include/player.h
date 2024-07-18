@@ -3,9 +3,9 @@
 
 #include <map>
 
-#include "command.h"
+#include <command.h>
 
-#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics.hpp>
 
 
 
@@ -26,7 +26,7 @@ public:
 
 
 public:
-	Player();
+	                        Player();
 
 	void					handleEvent(const sf::Event& event, CommandQueue& commands);
 	void					handleRealtimeInput(CommandQueue& commands);
@@ -45,4 +45,4 @@ private:
 	std::map<Action, Command>				mActionBinding;
 };
 
-#endif
+#endif // PLAYER_H

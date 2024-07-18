@@ -1,7 +1,7 @@
 #ifndef TITLE_STATE_H
-#define TITLE_STATE_HPP
+#define TITLE_STATE_H
 
-#include "state.h"
+#include <state.h>
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -10,7 +10,7 @@
 class TitleState : public State
 {
 public:
-	TitleState(StateStack& stack, Context context);
+	                    TitleState(StateStack& stack, Context context);
 
 	virtual void		draw();
 	virtual bool		update(sf::Time dt);
@@ -25,5 +25,5 @@ private:
 	sf::Time			mTextEffectTime;
 };
 
-#endif // TITLE_STATE_HPP
+#endif // TITLE_STATE_H
 

@@ -2,11 +2,10 @@
 #define STATE_H
 
 
-#include "state_identifiers.h"
-#include "resource_identifiers.h"
+#include <state_identifiers.h>
+#include <resource_identifiers.h>
 
-#include <SFML/System/Time.hpp>
-#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics.hpp>
 
 #include <memory>
 
@@ -26,7 +25,7 @@ public:
 
 	struct Context
 	{
-		Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts, Player& player);
+		                    Context(sf::RenderWindow& window, TextureHolder& textures, FontHolder& fonts, Player& player);
 
 		sf::RenderWindow*	window;
 		TextureHolder*		textures;

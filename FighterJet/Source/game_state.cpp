@@ -1,4 +1,4 @@
-#include "../Include/game_state.h"
+#include <game_state.h>
 
 
 GameState::GameState(StateStack& stack, Context context)

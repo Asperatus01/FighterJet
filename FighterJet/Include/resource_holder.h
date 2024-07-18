@@ -30,4 +30,4 @@ private:
 };
 
 #include "resource_holder.inl" // Подключаем шаблонные функции
-#endif 
+#endif // RESOURCEHOLDER_H

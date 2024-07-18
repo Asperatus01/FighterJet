@@ -1,20 +1,18 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
-#include "resource_holder.h"
-#include "resource_identifiers.h"
-#include "player.h"
-#include "state_stack.h"
+#include <resource_holder.h>
+#include <resource_identifiers.h>
+#include <player.h>
+#include <state_stack.h>
 
-#include <SFML/System/Time.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics.hpp>
 
 
 class Application
 {
 public:
-	Application();
+	                        Application();
 	void					run();
 
 

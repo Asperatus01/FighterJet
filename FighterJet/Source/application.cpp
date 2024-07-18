@@ -1,17 +1,18 @@
-#include "../Include/application.h"
-#include "../Include/utility.h"
-#include "../Include/state.h"
-#include "../Include/state_identifiers.h"
-#include "../Include/title_state.h"
-#include "../Include/game_state.h"
-#include "../Include/menu_state.h"
-#include "../Include/pause_state.h"
+#include <application.h>
+#include <utility.h>
+#include <state.h>
+#include <state_identifiers.h>
+#include <title_state.h>
+#include <game_state.h>
+#include <menu_state.h>
+#include <pause_state.h>
+#include <settings_state.h>
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application()
-	: mWindow(sf::VideoMode(640, 480), "States", sf::Style::Close)
+	: mWindow(sf::VideoMode(640, 480), "Menus", sf::Style::Close)
 	, mTextures()
 	, mFonts()
 	, mPlayer()
@@ -24,6 +25,9 @@ Application::Application()
 
 	mFonts.load(Fonts::Main, "Media/Sansation.ttf");
 	mTextures.load(Textures::TitleScreen, "Media/Textures/TitleScreen.png");
+	mTextures.load(Textures::ButtonNormal, "Media/Textures/ButtonNormal.png");
+	mTextures.load(Textures::ButtonSelected, "Media/Textures/ButtonSelected.png");
+	mTextures.load(Textures::ButtonPressed, "Media/Textures/ButtonPressed.png");
 
 	mStatisticsText.setFont(mFonts.get(Fonts::Main));
 	mStatisticsText.setPosition(5.f, 5.f);
@@ -107,4 +111,5 @@ void Application::registerStates()
 	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
 	mStateStack.registerState<PauseState>(States::Pause);
+	mStateStack.registerState<SettingsState>(States::Settings);
 }

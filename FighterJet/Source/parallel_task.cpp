@@ -1,4 +1,4 @@
-#include "../Include/parallel_task.h"
+#include <parallel_task.h>
 
 
 ParallelTask::ParallelTask()
