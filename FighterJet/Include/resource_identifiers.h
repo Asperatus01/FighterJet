@@ -14,7 +14,14 @@ namespace Textures
 	{
 		Eagle,
 		Raptor,
+		Avenger,
+		Bullet,
+		Missile,
 		Desert,
+		HealthRefill,
+		MissileRefill,
+		FireSpread,
+		FireRate,
 		TitleScreen,
 		ButtonNormal,
 		ButtonSelected,
@@ -38,6 +45,7 @@ typedef ResourceHolder<sf::Texture, Textures::ID>	TextureHolder;
 typedef ResourceHolder<sf::Font, Fonts::ID>			FontHolder;
 
 #endif // RESOURCE_IDENTIFIERS_H
+
 
 
 

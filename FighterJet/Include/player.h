@@ -1,13 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <map>
-
 #include <command.h>
 
 #include <SFML/Graphics.hpp>
 
-
+#include <map>
 
 
 class CommandQueue;
@@ -21,12 +19,21 @@ public:
 		MoveRight,
 		MoveUp,
 		MoveDown,
+		Fire,
+		LaunchMissile,
 		ActionCount
+	};
+
+	enum MissionStatus
+	{
+		MissionRunning,
+		MissionSuccess,
+		MissionFailure
 	};
 
 
 public:
-	                        Player();
+	Player();
 
 	void					handleEvent(const sf::Event& event, CommandQueue& commands);
 	void					handleRealtimeInput(CommandQueue& commands);
@@ -34,6 +41,8 @@ public:
 	void					assignKey(Action action, sf::Keyboard::Key key);
 	sf::Keyboard::Key		getAssignedKey(Action action) const;
 
+	void 					setMissionStatus(MissionStatus status);
+	MissionStatus 			getMissionStatus() const;
 
 private:
 	void					initializeActions();
@@ -43,6 +52,7 @@ private:
 private:
 	std::map<sf::Keyboard::Key, Action>		mKeyBinding;
 	std::map<Action, Command>				mActionBinding;
+	MissionStatus 							mCurrentMissionStatus;
 };
 
 #endif // PLAYER_H

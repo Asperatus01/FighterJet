@@ -7,6 +7,9 @@
 #include <menu_state.h>
 #include <pause_state.h>
 #include <settings_state.h>
+#include <game_over_state.h>
+
+#include <iostream>
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -56,11 +59,16 @@ void Application::run()
 			// Check inside this loop, because stack might be empty before update() call
 			if (mStateStack.isEmpty())
 				mWindow.close();
+
+            render();
 		}
 
+        
 		updateStatistics(dt);
-		render();
+		
 	}
+	
+	
 }
 
 void Application::processInput()
@@ -99,6 +107,7 @@ void Application::updateStatistics(sf::Time dt)
 	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
 	{
 		mStatisticsText.setString("FPS: " + toString(mStatisticsNumFrames));
+		std::cout << mStatisticsNumFrames << std::endl;
 
 		mStatisticsUpdateTime -= sf::seconds(1.0f);
 		mStatisticsNumFrames = 0;
@@ -112,4 +121,6 @@ void Application::registerStates()
 	mStateStack.registerState<GameState>(States::Game);
 	mStateStack.registerState<PauseState>(States::Pause);
 	mStateStack.registerState<SettingsState>(States::Settings);
+	mStateStack.registerState<GameOverState>(States::GameOver);
+	
 }
